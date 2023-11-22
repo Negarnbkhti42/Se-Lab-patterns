@@ -14,6 +14,18 @@ public class packageTest {
     }
 
     @Test
+    public void testShippingPrice() {
+        int weight = 2;
+        Package testPackage = new Package(weight);
+
+        StandardShip standardShip = new StandardShip(testPackage);
+        ExpressShip expressShip = new ExpressShip(testPackage);
+
+        assertEquals(standardShip.getShipPrice(), weight * 2.5);
+        assertEquals(expressShip.getShipPrice(), weight * 3.5);
+    }
+
+    @Test
     public void testPackageIsShipped() {
         int weight = 4;
         Package testPackage = new Package(weight);
