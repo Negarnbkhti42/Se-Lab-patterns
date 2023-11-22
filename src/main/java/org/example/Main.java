@@ -37,6 +37,6 @@ public class Main {
             System.out.println(userPackage.getState().toString());
         }
 
-        System.out.println(userPackage.getState().stoString());
+        System.out.println(userPackage.getState().toString());
     }
 }

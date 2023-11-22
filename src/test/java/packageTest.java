@@ -1,3 +1,5 @@
+import org.example.*;
+import org.example.Package;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,7 +12,7 @@ public class packageTest {
         Package testPackage = new Package(weight);
 
         assertEquals(weight, testPackage.getWeight());
-        assertEquals(packageTest.getState().getClass(), InTransitState.class);
+        assertEquals(testPackage.getState().getClass(), InTransitState.class);
     }
 
     @Test
@@ -21,8 +23,8 @@ public class packageTest {
         StandardShip standardShip = new StandardShip(testPackage);
         ExpressShip expressShip = new ExpressShip(testPackage);
 
-        assertEquals(standardShip.getShipPrice(), weight * 2.5);
-        assertEquals(expressShip.getShipPrice(), weight * 3.5);
+        assertEquals(standardShip.getShipPrice(), weight * 2.5, 0.5);
+        assertEquals(expressShip.getShipPrice(), weight * 3.5, 0.5);
     }
 
     @Test

@@ -1,3 +1,5 @@
+package org.example;
+
 public class Package {
     private int weight;
     private ShipMethod shippingMethod;
@@ -5,15 +7,15 @@ public class Package {
 
     public Package(int weight) {
         this.weight = weight;
-        this.state = new InTransitState();
+        this.state = new InTransitState(this);
     }
 
     public int getWeight() {
-        return weight;
+        return this.weight;
     }
 
     public ShipMethod getShippingMethod() {
-        return shippingMethod;
+        return this.shippingMethod;
     }
 
     public void setShippingMethod(ShipMethod shippingMethod) {
@@ -21,7 +23,7 @@ public class Package {
     }
 
     public State getState() {
-        return state;
+        return this.state;
     }
 
     public void setState(State state) {
@@ -29,7 +31,7 @@ public class Package {
     }
 
     public void sendPackage() {
-        state.handle(this);
+        this.state.handle();
     }
 
 }
