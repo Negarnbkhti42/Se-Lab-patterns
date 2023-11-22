@@ -10,6 +10,7 @@ public class packageTest {
         Package testPackage = new Package(weight);
 
         assertEquals(weight, testPackage.getWeight());
+        assertEquals(packageTest.getState().getClass(), InTransitState.class);
     }
 
     @Test
